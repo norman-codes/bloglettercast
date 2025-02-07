@@ -46,10 +46,9 @@
                 "type": "select",
                 "options": [
                     "Logo on the left",
-                    "Logo in the middle",
-                    "Stacked"
+                    "Logo in the middle"
                 ],
-                "default": "Stacked"
+                "default": "Logo in the middle"
             },
             "header_style": {
                 "type": "select",
