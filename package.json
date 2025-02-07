@@ -17,7 +17,7 @@
         "theme",
         "ghost-theme"
     ],
-    "docs": "https://headline.ghost.io/about/",
+    "docs": "https://github.com/norman-codes/bloglettercast",
     "config": {
         "posts_per_page": 7,
         "image_sizes": {
