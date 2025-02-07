@@ -7,7 +7,13 @@
                 {{#match pagination.pages ">" 1}}
                     <a href="{{@site.url}}/page/2">Latest</a>
                 {{else}}
-                    Latest
+                    Featured
+                    {{!--
+                        TO BE IMPLEMENTED; currently functions as "latest".
+
+                        Ideally, this would display 3 or 4 featured posts as cards,
+                        with the image, title, and excerpt there.
+                    --}}
                 {{/match}}
             </h2>
 
