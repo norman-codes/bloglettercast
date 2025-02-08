@@ -32,10 +32,6 @@ body:not(.is-head-stacked) .gh-head {
     height: 88px;
 }
 
-body:not(.is-head-stacked) .gh-head-inner {
-    border-bottom: 1px solid var(--color-light-gray);
-}
-
 .nav {
     letter-spacing: -0.006em;
 }
@@ -483,7 +479,6 @@ body:not(.home-template) .gh-topic-grid .gh-card {
 
 .gh-cover {
     --cover-height: 50vh;
-
     display: flex;
     align-items: center;
     justify-content: center;
