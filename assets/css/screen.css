@@ -28,7 +28,7 @@ figcaption {
     font-weight: 500;
 }
 
-body:not(.is-head-stacked) .gh-head {
+.gh-head {
     height: 88px;
 }
 
