@@ -53,10 +53,15 @@ body:is(.is-head-transparent, .is-head-brand, .is-head-dark) .gh-head-logo img +
 
 .gh-topic-grid + .gh-topic-grid {
     margin-top: 80px;
+    /* Rounded corners, semi-transparent dark background */
+    background-color: #c0c0c01a;
+    border-radius: 8px;
+    /* Pushing content inside uniformly a little bit */
+    padding: 20px;
 }
 
 .gh-topic-grid .gh-topic-name {
-    margin-bottom: 40px;
+    margin-top: 16px;
     font-size: 2.4rem;
     text-transform: uppercase;
     letter-spacing: -0.01em;
