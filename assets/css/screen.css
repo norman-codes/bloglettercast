@@ -320,6 +320,41 @@ body:not(.home-template) .gh-topic-grid .gh-card {
     margin-left: 4px;
 }
 
+/* Tag page */
+.centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%; /* Ensures the container takes full width of its parent */
+}
+
+.gh-taghead {
+    display: flex;
+    flex-direction: column;
+    max-width: 560px;
+    margin-bottom: 40px;
+}
+
+.gh-tag-title {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+}
+
+.gh-tag-description {
+    text-align: center;
+    margin-top: 12px;
+    font-size: 1.7rem;
+    color: var(--color-secondary-text);
+}
+
+/* Author page */
+
+.gh-author-bio {
+    /* Placeholder property (proof of concept) */
+    text-decoration: line-through;
+}
+
 /* Article */
 
 .gh-article-header {

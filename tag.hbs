@@ -1,17 +1,19 @@
 {{!< default}}
 
 <main class="gh-main gh-outer">
-    <div class="gh-inner">
-        {{#tag}}
-            <section class="gh-pagehead">
-                <h1 class="gh-pagehead-title">{{name}}</h1>
+    {{#tag}}
+        <div class="centered-container">
+            <section class="gh-taghead">
+                <h1 class="gh-tag-title">{{name}}</h1>
 
                 {{#if description}}
-                    <div class="gh-pagehead-description">{{description}}</div>
+                    <div class="gh-tag-description">{{description}}</div>
                 {{/if}}
             </section>
-        {{/tag}}
+        </div>
+    {{/tag}}
 
+    <div class="gh-inner">
         <div class="gh-topic gh-topic-grid">
             <div class="gh-topic-content gh-feed">
                 {{#foreach posts limit="all"}}
