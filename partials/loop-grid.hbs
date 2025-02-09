@@ -22,9 +22,7 @@
 
             {{#if excerpt}}
                 {{#is "home"}}
-                    {{#has index="0"}}
-                        <div class="gh-card-excerpt">{{excerpt}}</div>
-                    {{/has}}
+                    <div class="gh-card-excerpt">{{excerpt}}</div>
                 {{else}}
                     <div class="gh-card-excerpt">{{excerpt}}</div>
                 {{/is}}
@@ -32,8 +30,8 @@
 
             <footer class="gh-card-footer">
                 <time class="gh-card-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMM YYYY"}}</time>
-                {{#if @site.comments_enabled}}
-                    {{comment_count class="gh-card-comments"}}
+                {{#if reading_time}}
+                    <span class="gh-card-length">{{reading_time}}</span>
                 {{/if}}
             </footer>
         </div>
