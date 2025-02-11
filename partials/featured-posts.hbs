@@ -21,21 +21,39 @@
           </a>
         {{/if}}
 
-        {{! Post Title }}
-        <div class='featured-carousel-card-title'>
-          <a
-            href='{{url}}'
-            aria-label='{{title}}'
-          >
-            <h4>{{title}}</h4>
-          </a>
+        {{!-- Post Text --}}
+        <div class='featured-carousel-card-text'>
+          {{! Post Title }}
+          <div class='featured-carousel-card-title'>
+            <a
+              href='{{url}}'
+              aria-label='{{title}}'
+            >
+              <h4>{{title}}</h4>
+            </a>
+          </div>
+
+          
+          {{!-- Post Excerpt --}}
+          {{#if excerpt}}
+          <div class='featured-carousel-card-excerpt'>
+            {{!-- Ideally, implement a way to truncate custom excerpts here, since
+            the default truncation with "words" or "characters" only works on
+            regular excerpts, alas
+              --> source: https://ghost.org/docs/themes/helpers/excerpt/
+            A few options include:
+              - CURRENT CHOICE: CSS truncation with ellipsis ("text-overflow" property)
+                --> only works well with single-line though
+                --> source: https://stackoverflow.com/questions/33058004/applying-an-ellipsis-to-multiline-text
+              - inline JavaScript
+              - pre-built JavaScript library (e.g., lodash)
+              - 
+            --}}
+            <p>{{excerpt}}</p>
+          </div>
+          {{/if}}
         </div>
 
-        {{!-- Post Excerpt --}}
-        {{!-- This is a placeholder for now;
-        it would be really cool if the excerpt
-        were rendered on top of the image if hovering
-        over it, or via a tooltip or something. --}}
       </div>
     {{/foreach}}
   </div>

@@ -68,12 +68,22 @@ body:is(.is-head-transparent, .is-head-brand, .is-head-dark) .gh-head-logo img +
 }
 
 .featured-carousel-card-title {
-    /* In future, this could be changed to "...card-text" and represent a
-    container that holds both the title and the excerpt. */
-    text-align: center;
+    text-align: left;
     text-transform: uppercase;
     font-size: 1.6rem;
     margin-top: 15px;
+}
+
+.featured-carousel-card-excerpt {
+    margin-top: 5px;
+}
+
+.featured-carousel-card-excerpt p {
+    /* Single-line excerpt truncation */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 15px;
 }
 
 /* Styles specific to grid style sections */
