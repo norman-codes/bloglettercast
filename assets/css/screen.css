@@ -55,6 +55,10 @@ body:is(.is-head-transparent, .is-head-brand, .is-head-dark) .gh-head-logo img +
     margin-bottom: 20px;
 }
 
+.featured-carousel-card-title {
+    text-align: center;
+}
+
 /* Styles specific to grid style sections */
 
 .gh-topic-grid + .gh-topic-grid {
