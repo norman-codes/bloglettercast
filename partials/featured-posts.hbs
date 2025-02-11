@@ -2,7 +2,7 @@
 
 {{! Featured posts }}
 {{#get 'posts' filter='featured:true' limit='all' as |featured|}}
-  <div class='featured-carousel js-featured-carousel'>
+  <div class='featured-carousel'>
     {{#foreach featured visibility='all'}}
       <div class='featured-carousel-card'>
         {{! Feature Image }}
@@ -35,7 +35,7 @@
 {{/get}}
 {{#contentFor 'scripts'}}
     <script>
-        const sliderContainer = document.querySelector('.js-featured-carousel'); if
+        const sliderContainer = document.querySelector('.featured-carousel'); if
         (sliderContainer) { const slider = tns({
           container: sliderContainer,
           items: 3,
@@ -44,8 +44,7 @@
           autoplay: false,
           nav: false,
           controls: true,
-          gutter: 12,
-          edgePadding: 12,
+          gutter: 32,
           responsive: { 0: { items: 1, }, 768: { items: 2, }, 992: { items: 3, } }
           });
         }
