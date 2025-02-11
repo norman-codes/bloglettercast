@@ -22,18 +22,26 @@
         {{/if}}
 
         {{! Post Title }}
-        <a 
-          class='featured-carousel-card-title'
-          href='{{url}}'
-          aria-label='{{title}}'
-        >
-          {{title}}
-        </a>
+        <div class='featured-carousel-card-title'>
+          <a
+            href='{{url}}'
+            aria-label='{{title}}'
+          >
+            <h4>{{title}}</h4>
+          </a>
+        </div>
+
+        {{!-- Post Excerpt --}}
+        {{!-- This is a placeholder for now;
+        it would be really cool if the excerpt
+        were rendered on top of the image if hovering
+        over it, or via a tooltip or something. --}}
       </div>
     {{/foreach}}
   </div>
 {{/get}}
 {{#contentFor 'scripts'}}
+    {{!-- Customized according to: https://github.com/ganlanyuan/tiny-slider?tab=readme-ov-file#options --}}
     <script>
         const sliderContainer = document.querySelector('.featured-carousel'); if
         (sliderContainer) { const slider = tns({
@@ -44,7 +52,9 @@
           autoplay: false,
           nav: false,
           controls: true,
+          mouseDrag: true,
           gutter: 32,
+          edgePadding: 16,
           responsive: { 0: { items: 1, }, 768: { items: 2, }, 992: { items: 3, } }
           });
         }
