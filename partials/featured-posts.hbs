@@ -29,7 +29,7 @@
             aria-label='{{title}}'
           >
             <img
-              src='{{img_url feature_image size='s'}}'
+              src='{{img_url feature_image size='m'}}'
               alt='{{title}}'
               loading="lazy"
             />
@@ -46,6 +46,15 @@
             >
               <h4>{{title}}</h4>
             </a>
+          </div>
+
+          <div class='featured-carousel-card-info'>
+            {{!-- Displaying the publication date --}}
+            <time class="featured-carousel-card-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMM YYYY"}}</time>
+            {{!-- Displaying the reading time --}}
+            {{#if reading_time}}
+              <span class="featured-carousel-card-length">{{reading_time}}</span>
+            {{/if}}
           </div>
           
           {{!-- Displaying the post's excerpt --}}

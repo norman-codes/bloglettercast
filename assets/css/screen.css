@@ -86,6 +86,10 @@ body:is(.is-head-transparent, .is-head-brand, .is-head-dark) .gh-head-logo img +
     padding-right: 15px;
 }
 
+.featured-carousel-card-info {
+    margin-top: 5px;
+}
+
 /* Styles specific to grid style sections */
 
 .gh-topic-grid + .gh-topic-grid {
