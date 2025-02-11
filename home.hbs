@@ -2,6 +2,14 @@
 
 <main class="gh-main gh-outer">
     <div class="gh-inner">
+        {{!-- Featured posts carousel --}}
+        <div class="featured-carousel-container">
+            {{> "featured-posts"}}
+        </div>
+
+        {{!-- Primary section(s), as specified in customization options --}}
+        {{!-- If one or more tag slugs are specified, then render each post
+        belonging to that tag in a "topic-grid" partial --}}
         {{#if @custom.enter_tag_slugs_for_primary_sections}}
             {{#get "tags" filter="slug:[{{@custom.enter_tag_slugs_for_primary_sections}}]"}}
                 {{#foreach tags}}
@@ -18,6 +26,9 @@
             {{/match}}
         {{/if}}
 
+        {{!-- Secondary section(s), as specified in customization options --}}
+        {{!-- If one or more tag slugs are specified, then render each post
+        belonging to that tag in a "topic-minimal" partial --}}
         {{#if @custom.enter_tag_slugs_for_secondary_sections}}
             {{#get "tags" filter="slug:[{{@custom.enter_tag_slugs_for_secondary_sections}}]"}}
                 {{#if tags}}
@@ -41,10 +52,6 @@
                 {{/get}}
             {{/match}}
         {{/if}}
-    
-    <div class="featured-carousel-container">
-        {{> "featured-posts"}}
-    </div>
     
     </div>
 
