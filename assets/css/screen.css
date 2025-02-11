@@ -88,6 +88,7 @@ body:is(.is-head-transparent, .is-head-brand, .is-head-dark) .gh-head-logo img +
 
 .featured-carousel-card-info {
     margin-top: 5px;
+    font-size: 1.4rem;
 }
 
 /* Styles specific to grid style sections */
