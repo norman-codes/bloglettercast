@@ -1,11 +1,26 @@
-{{!-- Reference: https://brightthemes.com/blog/ghost-featured-posts-slider --}}
+{{!-- References:
+  - https://brightthemes.com/blog/ghost-featured-posts-slider
+  - https://www.youtube.com/watch?v=ObFqp3yTwjQ
+  - https://www.youtube.com/watch?v=GTS-5aHwR8o
+  - Using <span> instead of <i> for icons: https://github.com/freeCodeCamp/freeCodeCamp/issues/9464
+--}}
 
-{{! Featured posts }}
+{{! Obtain the context for featured posts }}
 {{#get 'posts' filter='featured:true' limit='all' as |featured|}}
+  {{!-- The carousel controls (previous and next buttons) --}}
+  <div class="featured-carousel-controls">
+    <button class="featured-carousel-prev-button">
+      <span class="featured-carousel-prev-button-icon">{{> "icons/left-arrowhead"}}</span>
+    </button>
+    <button class="featured-carousel-next-button">
+      <span class="featured-carousel-next-button-icon">{{> "icons/right-arrow"}}</span>
+    </button>
+  </div>
+  {{!-- The carousel itself, containing cards for each featured post --}}
   <div class='featured-carousel'>
     {{#foreach featured visibility='all'}}
       <div class='featured-carousel-card'>
-        {{! Feature Image }}
+        {{! Displaying the post's feature image }}
         {{#if feature_image}}
           <a
             class='featured-carousel-card-image'
@@ -21,9 +36,9 @@
           </a>
         {{/if}}
 
-        {{!-- Post Text --}}
+        {{!-- Displaying the post's title and (custom) excerpt --}}
         <div class='featured-carousel-card-text'>
-          {{! Post Title }}
+          {{! Displaying the post's title }}
           <div class='featured-carousel-card-title'>
             <a
               href='{{url}}'
@@ -32,9 +47,8 @@
               <h4>{{title}}</h4>
             </a>
           </div>
-
           
-          {{!-- Post Excerpt --}}
+          {{!-- Displaying the post's excerpt --}}
           {{#if excerpt}}
           <div class='featured-carousel-card-excerpt'>
             {{!-- Ideally, implement a way to truncate custom excerpts here, since
@@ -59,6 +73,10 @@
   </div>
 {{/get}}
 
+{{!--
+  Injecting the Tiny Slider carousel into the DOM
+  based on the structure defined above
+--}}
 {{#contentFor 'scripts'}}
     {{!-- Customized according to: https://github.com/ganlanyuan/tiny-slider?tab=readme-ov-file#options --}}
     <script>
@@ -71,6 +89,7 @@
           autoplay: false,
           nav: false,
           controls: true,
+          controlsContainer: '.featured-carousel-controls',
           mouseDrag: true,
           gutter: 32,
           edgePadding: 16,
