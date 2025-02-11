@@ -51,8 +51,20 @@ body:is(.is-head-transparent, .is-head-brand, .is-head-dark) .gh-head-logo img +
 
 /* Featured carousel */
 .featured-carousel {
+    background-color: #9696961a;
+    padding: 20px;
+    border-radius: 8px;
+    /* In future, I may extend this to occupy
+    the full width of the page */
+}
+
+.featured-carousel-controls {
+    display: flex;
+    justify-content: right;
+}
+
+.featured-carousel-items {
     margin-top: 20px;
-    margin-bottom: 20px;
 }
 
 .featured-carousel-card {

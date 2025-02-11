@@ -5,6 +5,7 @@
   - Using <span> instead of <i> for icons: https://github.com/freeCodeCamp/freeCodeCamp/issues/9464
 --}}
 
+<div class="featured-carousel">
 {{! Obtain the context for featured posts }}
 {{#get 'posts' filter='featured:true' limit='all' as |featured|}}
   {{!-- The carousel controls (previous and next buttons) --}}
@@ -17,7 +18,7 @@
     </button>
   </div>
   {{!-- The carousel itself, containing cards for each featured post --}}
-  <div class='featured-carousel'>
+  <div class='featured-carousel-items'>
     {{#foreach featured visibility='all'}}
       <div class='featured-carousel-card'>
         {{! Displaying the post's feature image }}
@@ -81,6 +82,7 @@
     {{/foreach}}
   </div>
 {{/get}}
+</div>
 
 {{!--
   Injecting the Tiny Slider carousel into the DOM
@@ -89,7 +91,7 @@
 {{#contentFor 'scripts'}}
     {{!-- Customized according to: https://github.com/ganlanyuan/tiny-slider?tab=readme-ov-file#options --}}
     <script>
-        const sliderContainer = document.querySelector('.featured-carousel'); if
+        const sliderContainer = document.querySelector('.featured-carousel-items'); if
         (sliderContainer) { const slider = tns({
           container: sliderContainer,
           items: 3,
