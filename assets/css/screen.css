@@ -49,6 +49,12 @@ body:is(.is-head-transparent, .is-head-brand, .is-head-dark) .gh-head-logo img +
     opacity: 0;
 }
 
+/* Featured carousel */
+.featured-carousel {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 /* Styles specific to grid style sections */
 
 .gh-topic-grid + .gh-topic-grid {
