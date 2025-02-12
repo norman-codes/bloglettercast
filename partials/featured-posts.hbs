@@ -7,7 +7,7 @@
 
 <div class="featured-carousel">
 {{! Obtain the context for featured posts }}
-{{#get 'posts' filter='featured:true' limit='all' as |featured|}}
+{{#get 'posts' include="tags" filter='featured:true' limit='all' as |featured|}}
   {{!-- The carousel controls (previous and next buttons) --}}
   <div class="featured-carousel-controls">
     <button class="featured-carousel-prev-button">
@@ -55,6 +55,10 @@
             {{!-- Displaying the reading time --}}
             {{#if reading_time}}
               <span class="featured-carousel-card-length">{{reading_time}}</span>
+            {{/if}}
+            {{!-- Displaying the primary tag --}}
+            {{#if primary_tag}}
+              <a class="gh-article-tag" href="{{primary_tag.url}}">{{primary_tag.name}}</a>
             {{/if}}
           </div>
           
