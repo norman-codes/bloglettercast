@@ -103,6 +103,20 @@ body:is(.is-head-transparent, .is-head-brand, .is-head-dark) .gh-head-logo img +
     font-size: 1.4rem;
 }
 
+.featured-carousel-prev-button, .featured-carousel-next-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+}
+
+.featured-carousel-prev-button-icon, .featured-carousel-next-button-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Styles specific to grid style sections */
 
 .gh-topic-grid {
