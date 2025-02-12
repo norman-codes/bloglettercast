@@ -103,12 +103,17 @@ body:is(.is-head-transparent, .is-head-brand, .is-head-dark) .gh-head-logo img +
     font-size: 1.4rem;
 }
 
+/*
+Reference for centering button icons:
+https://stackoverflow.com/questions/55756940/how-to-center-the-icon-in-the-button
+*/
+
 .featured-carousel-prev-button, .featured-carousel-next-button {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 48px;
-    height: 48px;
+    width: 32px;
+    height: 32px;
 }
 
 .featured-carousel-prev-button-icon, .featured-carousel-next-button-icon {
