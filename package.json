@@ -1,7 +1,7 @@
 {
     "name": "bloglettercast",
     "description": "A Ghost theme for a blog, newsletter, and podcast.",
-    "version": "1.0.1",
+    "version": "0.0.2",
     "private": true,
     "engines": {
         "ghost": ">=5.0.0"
@@ -74,9 +74,6 @@
                     "Elegant serif"
                 ],
                 "default": "Elegant serif"
-            },
-            "white_publication_logo_for_transparent_header": {
-                "type": "image"
             },
             "email_signup_text": {
                 "type": "text",

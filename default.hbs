@@ -21,9 +21,6 @@
                     <a {{^is "home"}}class="gh-head-logo"{{/is}} href="{{@site.url}}">
                         {{#if @site.logo}}
                             <img src="{{@site.logo}}" alt="{{@site.title}}">
-                            {{#if @custom.white_publication_logo_for_transparent_header}}
-                                <img src="{{@custom.white_publication_logo_for_transparent_header}}" alt="{{@site.title}}">
-                            {{/if}}
                         {{else}}
                             {{@site.title}}
                         {{/if}}
