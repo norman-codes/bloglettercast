@@ -5,6 +5,9 @@
   - Using <span> instead of <i> for icons: https://github.com/freeCodeCamp/freeCodeCamp/issues/9464
 --}}
 
+{{!-- TODO: Make this a resuable component such that ANY collection of posts
+can be displayed in the carousel --}}
+
 <div class="featured-carousel">
 {{! Obtain the context for featured posts }}
 {{#get 'posts' include="tags" filter='featured:true' limit='all' as |featured|}}
