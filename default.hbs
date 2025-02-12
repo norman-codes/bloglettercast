@@ -72,14 +72,13 @@
             <nav class="gh-foot-menu">
                 {{navigation type="secondary"}}
             </nav>
-
-            <div class="gh-copyright">
-                {{#unless @custom.footer_text}}
-                    {{@site.title}} © {{date format="YYYY"}}. Powered by <a href="https://ghost.org/" target="_blank" rel="noopener">Ghost</a>
-                {{else}}
-                    {{@custom.footer_text}}
-                {{/unless}}
-            </div>
+        </div>
+        <div class="gh-copyright">
+            {{#unless @custom.footer_text}}
+                {{@site.title}} © {{date format="YYYY"}}. Powered by <a href="https://ghost.org/" target="_blank" rel="noopener">Ghost</a>
+            {{else}}
+                {{@custom.footer_text}}
+            {{/unless}}
         </div>
     </footer>
 

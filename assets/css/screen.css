@@ -766,13 +766,11 @@ body:not(.home-template) .gh-topic-grid .gh-card {
 }
 
 .gh-copyright {
+    justify-content: center;
+    display: flex;
     margin-top: 32px;
     color: var(--color-secondary-text);
     letter-spacing: -0.006em;
-}
-
-.gh-subscribe ~ .gh-copyright {
-    margin-top: 64px;
 }
 
 /* Media queries */
