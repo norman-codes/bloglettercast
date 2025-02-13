@@ -8,18 +8,20 @@
 {{!-- TODO: Make this a resuable component such that ANY collection of posts
 can be displayed in the carousel --}}
 
+{{!-- The carousel controls (previous and next buttons) --}}
+<div class="featured-carousel-controls">
+  <button class="featured-carousel-prev-button">
+    <span class="featured-carousel-prev-button-icon">{{> "icons/left-arrowhead"}}</span>
+  </button>
+  <button class="featured-carousel-next-button">
+    <span class="featured-carousel-next-button-icon">{{> "icons/right-arrowhead"}}</span>
+  </button>
+</div>
+
 <div class="featured-carousel">
 {{! Obtain the context for featured posts }}
 {{#get 'posts' include="tags" filter='featured:true' limit='all' as |featured|}}
-  {{!-- The carousel controls (previous and next buttons) --}}
-  <div class="featured-carousel-controls">
-    <button class="featured-carousel-prev-button">
-      <span class="featured-carousel-prev-button-icon">{{> "icons/left-arrowhead"}}</span>
-    </button>
-    <button class="featured-carousel-next-button">
-      <span class="featured-carousel-next-button-icon">{{> "icons/right-arrowhead"}}</span>
-    </button>
-  </div>
+
   {{!-- The carousel itself, containing cards for each featured post --}}
   <div class='featured-carousel-items'>
     {{#foreach featured visibility='all'}}

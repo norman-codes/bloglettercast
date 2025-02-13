@@ -57,21 +57,15 @@ body:is(.is-head-transparent, .is-head-brand, .is-head-dark) .gh-head-logo img +
 }
 
 /* Featured carousel */
-.featured-carousel {
+.featured-carousel-container {
     background-color: #9696961a;
     width: 100vw; /* Full viewport width */
     margin-left: calc(-50vw + 50%); /* Adjust to center if needed */
     margin-right: calc(-50vw + 50%);
-    padding: 20px;
-}
-
-.featured-carousel-controls {
-    display: flex;
-    justify-content: right;
-}
-
-.featured-carousel-items {
-    margin-top: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 60px;
+    padding-right: 60px;
 }
 
 .featured-carousel-card {
@@ -112,12 +106,6 @@ body:is(.is-head-transparent, .is-head-brand, .is-head-dark) .gh-head-logo img +
     margin-top: 5px;
 }
 
-.featured-carousel-controls {
-    display: flex;
-    flex-direction: horizontal;
-    gap: 10px;
-}
-
 /*
 Reference for centering button icons:
 https://stackoverflow.com/questions/55756940/how-to-center-the-icon-in-the-button
@@ -127,8 +115,24 @@ https://stackoverflow.com/questions/55756940/how-to-center-the-icon-in-the-butto
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 32px;
-    height: 32px;
+    width: 48px;
+    height: 48px;
+    outline: none;
+    border: 3px solid black;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+}
+
+.featured-carousel-prev-button {
+    left: 0%;
+    margin-left: 12px;
+}
+
+.featured-carousel-next-button {
+    right: 0%;
+    margin-right: 12px;
 }
 
 .featured-carousel-prev-button-icon, .featured-carousel-next-button-icon {
