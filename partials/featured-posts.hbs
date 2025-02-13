@@ -26,66 +26,68 @@ can be displayed in the carousel --}}
   <div class='featured-carousel-items'>
     {{#foreach featured visibility='all'}}
       <div class='featured-carousel-card'>
-        <div class='featured-carousel-card-item'>
-          {{! Displaying the post's feature image }}
-          {{#if feature_image}}
-            <a
-              class='featured-carousel-card-image'
-              href='{{url}}'
-              title='{{title}}'
-              aria-label='{{title}}'
-            >
-              <img
-                src='{{img_url feature_image size='m'}}'
-                alt='{{title}}'
-                loading="lazy"
-              />
-            </a>
-          {{/if}}
-
-          {{!-- Displaying the post's title and (custom) excerpt --}}
-          <div class='featured-carousel-card-text'>
-            {{! Displaying the post's title }}
-            <div class='featured-carousel-card-title'>
+        <div class='featured-carousel-item-container'>
+          <div class='featured-carousel-card-item'>
+            {{! Displaying the post's feature image }}
+            {{#if feature_image}}
               <a
+                class='featured-carousel-card-image'
                 href='{{url}}'
+                title='{{title}}'
                 aria-label='{{title}}'
               >
-                <h4>{{title}}</h4>
+                <img
+                  src='{{img_url feature_image size='m'}}'
+                  alt='{{title}}'
+                  loading="lazy"
+                />
               </a>
-            </div>
-
-            <div class='featured-carousel-card-info'>
-              {{!-- Displaying the publication date --}}
-              <time class="featured-carousel-card-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMM YYYY"}}</time>
-              {{!-- Displaying the reading time --}}
-              {{#if reading_time}}
-                <span class="featured-carousel-card-length">{{reading_time}}</span>
-              {{/if}}
-              {{!-- Displaying the primary tag --}}
-              {{#if primary_tag}}
-                <a class="featured-carousel-card-tag" href="{{primary_tag.url}}">{{primary_tag.name}}</a>
-              {{/if}}
-            </div>
-            
-            {{!-- Displaying the post's excerpt --}}
-            {{#if excerpt}}
-            <div class='featured-carousel-card-excerpt'>
-              {{!-- Ideally, implement a way to truncate custom excerpts here, since
-              the default truncation with "words" or "characters" only works on
-              regular excerpts, alas
-                --> source: https://ghost.org/docs/themes/helpers/excerpt/
-              A few options include:
-                - CURRENT CHOICE: CSS truncation with ellipsis ("text-overflow" property)
-                  --> only works well with single-line though
-                  --> source: https://stackoverflow.com/questions/33058004/applying-an-ellipsis-to-multiline-text
-                - inline JavaScript
-                - pre-built JavaScript library (e.g., lodash)
-                - 
-              --}}
-              <p class="featured-carousel-card-excerpt-text">{{excerpt}}</p>
-            </div>
             {{/if}}
+
+            {{!-- Displaying the post's title and (custom) excerpt --}}
+            <div class='featured-carousel-card-text'>
+              {{! Displaying the post's title }}
+              <div class='featured-carousel-card-title'>
+                <a
+                  href='{{url}}'
+                  aria-label='{{title}}'
+                >
+                  <h4>{{title}}</h4>
+                </a>
+              </div>
+
+              <div class='featured-carousel-card-info'>
+                {{!-- Displaying the publication date --}}
+                <time class="featured-carousel-card-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMM YYYY"}}</time>
+                {{!-- Displaying the reading time --}}
+                {{#if reading_time}}
+                  <span class="featured-carousel-card-length">{{reading_time}}</span>
+                {{/if}}
+                {{!-- Displaying the primary tag --}}
+                {{#if primary_tag}}
+                  <a class="featured-carousel-card-tag" href="{{primary_tag.url}}">{{primary_tag.name}}</a>
+                {{/if}}
+              </div>
+              
+              {{!-- Displaying the post's excerpt --}}
+              {{#if excerpt}}
+              <div class='featured-carousel-card-excerpt'>
+                {{!-- Ideally, implement a way to truncate custom excerpts here, since
+                the default truncation with "words" or "characters" only works on
+                regular excerpts, alas
+                  --> source: https://ghost.org/docs/themes/helpers/excerpt/
+                A few options include:
+                  - CURRENT CHOICE: CSS truncation with ellipsis ("text-overflow" property)
+                    --> only works well with single-line though
+                    --> source: https://stackoverflow.com/questions/33058004/applying-an-ellipsis-to-multiline-text
+                  - inline JavaScript
+                  - pre-built JavaScript library (e.g., lodash)
+                  - 
+                --}}
+                <p class="featured-carousel-card-excerpt-text">{{excerpt}}</p>
+              </div>
+              {{/if}}
+            </div>
           </div>
         </div>
       </div>
@@ -113,7 +115,7 @@ can be displayed in the carousel --}}
           prevButton: '.featured-carousel-prev-button',
           nextButton: '.featured-carousel-next-button',
           mouseDrag: true,
-          gutter: 32,
+          gutter: 12,
           edgePadding: 48,
           responsive: { 0: { items: 1, }, 768: { items: 2, }, 992: { items: 3, } }
           });
