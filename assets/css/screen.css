@@ -49,13 +49,20 @@ body:is(.is-head-transparent, .is-head-brand, .is-head-dark) .gh-head-logo img +
     opacity: 0;
 }
 
+/* The parent container of all content on home page below the header */
+.gh-inner-home {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
 /* Featured carousel */
 .featured-carousel {
     background-color: #9696961a;
+    width: 100vw; /* Full viewport width */
+    margin-left: calc(-50vw + 50%); /* Adjust to center if needed */
+    margin-right: calc(-50vw + 50%);
     padding: 20px;
-    border-radius: 8px;
-    /* In future, I may extend this to occupy
-    the full width of the page */
 }
 
 .featured-carousel-controls {
@@ -125,12 +132,11 @@ https://stackoverflow.com/questions/55756940/how-to-center-the-icon-in-the-butto
 /* Styles specific to grid style sections */
 
 .gh-topic-grid {
-    margin-top: 80px;
     /* Rounded corners, semi-transparent dark background */
     background-color: #9696961a;
     border-radius: 8px;
     /* Pushing content inside uniformly a little bit */
-    padding: 20px;
+    padding: 36px;
 }
 
 .gh-topic-grid .gh-topic-name {
@@ -345,7 +351,7 @@ body:not(.home-template) .gh-topic-grid .gh-card {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 80px 48px;
-    margin-top: 120px;
+    margin-top: 40px;
 }
 
 .gh-topic-header {
