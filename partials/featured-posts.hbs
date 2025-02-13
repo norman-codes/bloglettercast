@@ -83,7 +83,7 @@ can be displayed in the carousel --}}
                 - pre-built JavaScript library (e.g., lodash)
                 - 
               --}}
-              <p>{{excerpt}}</p>
+              <p class="featured-carousel-card-excerpt-text">{{excerpt}}</p>
             </div>
             {{/if}}
           </div>
@@ -118,5 +118,15 @@ can be displayed in the carousel --}}
           responsive: { 0: { items: 1, }, 768: { items: 2, }, 992: { items: 3, } }
           });
         }
+    </script>
+    <script>
+      // obtain all instances of "featured-carousel-card-excerpt-text"
+      // and truncate them to 50 characters using lodash
+      const excerpts = document.querySelectorAll('.featured-carousel-card-excerpt-text');
+      excerpts.forEach(excerpt => {
+        const excerptText = excerpt.textContent;
+        const truncatedExcerpt = _.truncate(excerptText, { 'length': 50 });
+        excerpt.textContent = truncatedExcerpt;
+      });
     </script>
 {{/contentFor}}
