@@ -72,17 +72,12 @@ can be displayed in the carousel --}}
               {{!-- Displaying the post's excerpt --}}
               {{#if excerpt}}
               <div class='featured-carousel-card-excerpt'>
-                {{!-- Ideally, implement a way to truncate custom excerpts here, since
-                the default truncation with "words" or "characters" only works on
-                regular excerpts, alas
-                  --> source: https://ghost.org/docs/themes/helpers/excerpt/
-                A few options include:
-                  - CURRENT CHOICE: CSS truncation with ellipsis ("text-overflow" property)
-                    --> only works well with single-line though
-                    --> source: https://stackoverflow.com/questions/33058004/applying-an-ellipsis-to-multiline-text
-                  - inline JavaScript
-                  - pre-built JavaScript library (e.g., lodash)
-                  - 
+                {{!--
+                  The excerpt is truncated to a certain number of characters via lodash's `truncate` function.
+
+                  Why like this instead of using Ghost's built-in truncation? Because it doesn't unfortunately work for custom excerpts, as per the documentation
+                  here: https://ghost.org/docs/themes/helpers/excerpt/. Also, CSS truncation only works well for single-line text, as per:
+                  https://stackoverflow.com/questions/33058004/applying-an-ellipsis-to-multiline-text.
                 --}}
                 <p class="featured-carousel-card-excerpt-text">{{excerpt}}</p>
               </div>
@@ -96,39 +91,36 @@ can be displayed in the carousel --}}
 {{/get}}
 </div>
 
-{{!--
-  Injecting the Tiny Slider carousel into the DOM
-  based on the structure defined above
---}}
 {{#contentFor 'scripts'}}
-    {{!-- Customized according to: https://github.com/ganlanyuan/tiny-slider?tab=readme-ov-file#options --}}
-    <script>
-        const sliderContainer = document.querySelector('.featured-carousel-items'); if
-        (sliderContainer) { const slider = tns({
-          container: sliderContainer,
-          items: 3,
-          slideBy: 1,
-          loop: true,
-          autoplay: false,
-          nav: false,
-          controls: true,
-          prevButton: '.featured-carousel-prev-button',
-          nextButton: '.featured-carousel-next-button',
-          mouseDrag: true,
-          gutter: 12,
-          edgePadding: 48,
-          responsive: { 0: { items: 1, }, 768: { items: 2, }, 992: { items: 3, } }
-          });
-        }
-    </script>
-    <script>
-      // obtain all instances of "featured-carousel-card-excerpt-text"
-      // and truncate them to 50 characters using lodash
-      const excerpts = document.querySelectorAll('.featured-carousel-card-excerpt-text');
-      excerpts.forEach(excerpt => {
-        const excerptText = excerpt.textContent;
-        const truncatedExcerpt = _.truncate(excerptText, { 'length': 50 });
-        excerpt.textContent = truncatedExcerpt;
-      });
-    </script>
+  {{!-- Injecting the Tiny Slider carousel into the DOM based on the structure defined above --}}
+  {{!-- Customized according to: https://github.com/ganlanyuan/tiny-slider?tab=readme-ov-file#options --}}
+  <script>
+      const sliderContainer = document.querySelector('.featured-carousel-items'); if
+      (sliderContainer) { const slider = tns({
+        container: sliderContainer,
+        items: 3,
+        slideBy: 1,
+        loop: true,
+        autoplay: false,
+        nav: false,
+        controls: true,
+        prevButton: '.featured-carousel-prev-button',
+        nextButton: '.featured-carousel-next-button',
+        mouseDrag: true,
+        gutter: 12,
+        edgePadding: 48,
+        responsive: { 0: { items: 1, }, 768: { items: 2, }, 992: { items: 3, } }
+        });
+      }
+  </script>
+  {{!-- Obtains all instances of "featured-carousel-card-excerpt-text" and truncates them to 50 characters via lodash's truncate function. --}}
+  {{!-- See documentation here: https://lodash.info/doc/truncate --}}
+  <script>
+    const excerpts = document.querySelectorAll('.featured-carousel-card-excerpt-text');
+    excerpts.forEach(excerpt => {
+      const excerptText = excerpt.textContent;
+      const truncatedExcerpt = _.truncate(excerptText, { 'length': 50 });
+      excerpt.textContent = truncatedExcerpt;
+    });
+  </script>
 {{/contentFor}}
