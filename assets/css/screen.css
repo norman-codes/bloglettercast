@@ -121,6 +121,13 @@ https://stackoverflow.com/questions/55756940/how-to-center-the-icon-in-the-butto
     z-index: 1;
 }
 
+.featured-carousel-prev-button:hover, .featured-carousel-next-button:hover {
+    /* Size increase with smooth animation */
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out; /* Smooth transition for hover effect */
+    /* Ensure reverse transition, when hover stops */
+}
+
 .featured-carousel-prev-button {
     left: -0.5%;
 }
