@@ -7,21 +7,17 @@
 
 {{!-- TODO: Make this a resuable component such that ANY collection of posts
 can be displayed in the carousel --}}
-
-{{!-- The carousel controls (previous and next buttons) --}}
-<div class="featured-carousel-controls">
-  <button class="featured-carousel-prev-button">
-    <span class="featured-carousel-prev-button-icon">{{> "icons/left-arrowhead"}}</span>
-  </button>
-  <button class="featured-carousel-next-button">
-    <span class="featured-carousel-next-button-icon">{{> "icons/right-arrowhead"}}</span>
-  </button>
-</div>
+  {{!-- The carousel controls (previous and next buttons) --}}
 
 <div class="featured-carousel">
 {{! Obtain the context for featured posts }}
 {{#get 'posts' include="tags" filter='featured:true' limit='all' as |featured|}}
-
+  <button class="featured-carousel-prev-button">
+    <span class="featured-carousel-prev-button-icon">{{> "icons/left-arrow-tall"}}</span>
+  </button>
+  <button class="featured-carousel-next-button">
+    <span class="featured-carousel-next-button-icon">{{> "icons/right-arrow-tall"}}</span>
+  </button>
   {{!-- The carousel itself, containing cards for each featured post --}}
   <div class='featured-carousel-items'>
     {{#foreach featured visibility='all'}}
@@ -104,16 +100,18 @@ can be displayed in the carousel --}}
         const sliderContainer = document.querySelector('.featured-carousel-items'); if
         (sliderContainer) { const slider = tns({
           container: sliderContainer,
-          items: 3,
+          items: 5,
           slideBy: 1,
           loop: true,
           autoplay: false,
           nav: false,
           controls: true,
-          controlsContainer: '.featured-carousel-controls',
+          prevButton: '.featured-carousel-prev-button',
+          nextButton: '.featured-carousel-next-button',
+          fixedWidth: 300,
           mouseDrag: true,
-          gutter: 32,
-          edgePadding: 16,
+          gutter: 64,
+          edgePadding: 64,
           responsive: { 0: { items: 1, }, 768: { items: 2, }, 992: { items: 3, } }
           });
         }

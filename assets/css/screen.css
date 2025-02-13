@@ -62,10 +62,15 @@ body:is(.is-head-transparent, .is-head-brand, .is-head-dark) .gh-head-logo img +
     width: 100vw; /* Full viewport width */
     margin-left: calc(-50vw + 50%); /* Adjust to center if needed */
     margin-right: calc(-50vw + 50%);
+}
+
+.featured-carousel-items {
     padding-top: 30px;
     padding-bottom: 30px;
-    padding-left: 60px;
-    padding-right: 60px;
+}
+
+.featured-carousel {
+    position: relative;
 }
 
 .featured-carousel-card {
@@ -112,33 +117,28 @@ https://stackoverflow.com/questions/55756940/how-to-center-the-icon-in-the-butto
 */
 
 .featured-carousel-prev-button, .featured-carousel-next-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    outline: none;
+    border: transparent;
+    background-color: transparent;
+    position: absolute;
     width: 48px;
     height: 48px;
-    outline: none;
-    border: 3px solid black;
-    border-radius: 50%;
-    position: absolute;
     top: 50%;
     z-index: 1;
 }
 
 .featured-carousel-prev-button {
     left: 0%;
-    margin-left: 12px;
+    margin-left: 16px;
 }
 
 .featured-carousel-next-button {
-    right: 0%;
-    margin-right: 12px;
+    right: 0;
+    margin-right: 16px;
 }
 
-.featured-carousel-prev-button-icon, .featured-carousel-next-button-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.featured-carousel-prev-button-icon svg, .featured-carousel-next-button-icon svg {
+    fill: #3a3a3ab5
 }
 
 /* Styles specific to grid style sections */
