@@ -107,8 +107,8 @@ body:is(.is-head-transparent, .is-head-brand, .is-head-dark) .gh-head-logo img +
 }
 
 /*
-Reference for centering button icons:
-https://stackoverflow.com/questions/55756940/how-to-center-the-icon-in-the-button
+    Reference for centering button icons:
+    https://stackoverflow.com/questions/55756940/how-to-center-the-icon-in-the-button
 */
 
 .featured-carousel-prev-button, .featured-carousel-next-button {
@@ -120,13 +120,17 @@ https://stackoverflow.com/questions/55756940/how-to-center-the-icon-in-the-butto
     height: 64px;
     top: 50%;
     z-index: 1;
+    transition: transform 0.2s;
 }
 
-.featured-carousel-prev-button:hover, .featured-carousel-next-button:hover {
-    /* Size increase with smooth animation */
+/*
+    Reference for zooming button on hover:
+    https://www.w3schools.com/howto/howto_css_zoom_hover.asp
+*/
+
+.featured-carousel-prev-button:hover,
+.featured-carousel-next-button:hover {
     transform: scale(1.1);
-    transition: transform 0.2s ease-in-out; /* Smooth transition for hover effect */
-    /* Ensure reverse transition, when hover stops */
 }
 
 .featured-carousel-prev-button {
