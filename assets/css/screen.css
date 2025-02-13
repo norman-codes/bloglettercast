@@ -59,6 +59,7 @@ body:is(.is-head-transparent, .is-head-brand, .is-head-dark) .gh-head-logo img +
 /* Featured carousel */
 .featured-carousel-container {
     background-color: #9696961a;
+    border-radius: 8px;
 }
 
 .featured-carousel-items {
@@ -114,18 +115,18 @@ https://stackoverflow.com/questions/55756940/how-to-center-the-icon-in-the-butto
     border: transparent;
     background-color: transparent;
     position: absolute;
-    width: 64px;
+    width: 72px;
     height: 64px;
     top: 50%;
     z-index: 1;
 }
 
 .featured-carousel-prev-button {
-    left: 0%;
+    left: -0.5%;
 }
 
 .featured-carousel-next-button {
-    right: 0%;
+    right: -0.5%;
 }
 
 .featured-carousel-prev-button-icon svg, .featured-carousel-next-button-icon svg {
